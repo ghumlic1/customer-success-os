@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<title>AI Playbook for Customer Success Managers | Customer Success OS</title>
+<meta name="description" content="35+ production-tested AI prompts and 6 autonomous agents for Customer Success Managers. Customer success automation by an 11-year B2B SaaS CSM.">
+<link rel="canonical" href="https://customersuccessos.com/">
+<meta property="og:title" content="AI Playbook for Customer Success Managers | Customer Success OS">
+<meta property="og:description" content="35+ production-tested AI prompts and 6 autonomous agents for Customer Success Managers. Customer success automation by an 11-year B2B SaaS CSM.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://customersuccessos.com/">
+<meta property="og:image" content="https://customersuccessos.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Playbook for Customer Success Managers | Customer Success OS">
+<meta name="twitter:description" content="35+ production-tested AI prompts and 6 autonomous agents for Customer Success Managers.">
+<meta name="twitter:image" content="https://customersuccessos.com/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><title>Customer Success OS</title><rect width='32' height='32' rx='6' fill='%23005C6B'/><text x='4' y='23' font-size='18' font-weight='bold' fill='white'>CS</text></svg>">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Customer Success OS",
+      "description": "The AI Playbook for Customer Success Managers. 35+ production-tested AI prompts and 6 autonomous agent blueprints.",
+      "brand": {"@type": "Brand", "name": "Customer Success OS"},
+      "image": "https://customersuccessos.com/og-image.png",
+      "url": "https://customersuccessos.com/",
+      "author": {"@type": "Person", "name": "Greg Humlicek"}
+    },
+    {
+      "@type": "Person",
+      "name": "Greg Humlicek",
+      "jobTitle": "Customer Success Manager",
+      "url": "https://customersuccessos.com/",
+      "description": "Customer Success Manager in B2B SaaS with 11 years of experience managing enterprise accounts."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Who is this for?", "acceptedAnswer": {"@type": "Answer", "text": "Customer Success Managers, CS leaders, and anyone managing client relationships in B2B SaaS. Whether you manage 5 accounts or 50, the prompts and frameworks scale to your book of business."}},
+        {"@type": "Question", "name": "What AI tools do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Claude account works (free tier to try them; Claude Pro or your company's enterprise license is best for real client data). The playbook is designed to work with Claude Chat, Cowork, and Code."}},
+        {"@type": "Question", "name": "Is this safe for enterprise environments?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The playbook has a governance chapter covering PHI exclusion, SOC 2 considerations, BAA requirements, and the human-in-the-loop rules you'll need to clear compliance."}},
+        {"@type": "Question", "name": "What do I get when I sign up?", "acceptedAnswer": {"@type": "Answer", "text": "Immediately: the free AI Toolkit with 5 production-tested prompts covering meeting prep, QBR narratives, escalation briefs, email polishing, and weekly prioritization. You will also be first in line when the full Customer Success OS playbook launches, with the best available price."}},
+        {"@type": "Question", "name": "What if I'm brand new to AI?", "acceptedAnswer": {"@type": "Answer", "text": "That is exactly who the toolkit is built for. No coding, no prompt engineering. If you can paste into a chat window, you can run these today."}},
+        {"@type": "Question", "name": "When does the full playbook launch?", "acceptedAnswer": {"@type": "Answer", "text": "Targeting a 2026 launch under $500 for the full playbook. Waitlist members lock in the lowest price. Sign up for the free toolkit to get on the list."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ====================================================================
+   Customer Success OS - Landing Page
+   Aesthetic: Modern SaaS with Edge
+   Typography: Instrument Serif (display) + DM Sans (body)
+   ==================================================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #F7F5F0;
+  --bg-warm: #F0EDE6;
+  --bg-card: #FFFFFF;
+  --bg-dark: #0A1A1F;
+  --border-subtle: #DDD8CE;
+  --border-card: #E8E4DB;
+
+  --teal: #005C6B;
+  --teal-mid: #007A8A;
+  --teal-light: #00A99D;
+  --gold: #C8956C;
+  --gold-light: #D4A87D;
+  --gold-pale: rgba(200, 149, 108, 0.12);
+
+  --blue: #4A7FBA;
+  --green: #3D9B6F;
+  --purple: #7E5BAE;
+  --red: #C4513D;
+  --amber: #D4893A;
+  --mint: #2A9D8F;
+  --sky: #4895C7;
+  --slate: #6B7B8D;
+
+  --text-dark: #121A1C;
+  --text-body: #2E3A3D;
+  --text-muted: #576366;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── Grain Texture Overlay ── */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.grain > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Scroll Reveal Animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.48s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.56s; opacity: 1; transform: translateY(0); }
+
+/* ── Layout ── */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 88px 0;
+  position: relative;
+}
+
+/* ── Navigation ── */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
+  padding: 14px 0;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-dark);
+  letter-spacing: -0.3px;
+}
+
+.nav-brand span {
+  color: var(--teal);
+}
+
+.nav-cta {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  transition: all 0.3s var(--ease-out);
+}
+
+.nav-cta:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 92, 107, 0.25);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 72px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 92, 107, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-content {
+  animation: heroFadeIn 1s var(--ease-out) forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--gold-pale);
+  color: var(--gold);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.5vw, 58px);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 2px 8px rgba(0, 92, 107, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--teal-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 92, 107, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-dark);
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  border: 1.5px solid var(--border-subtle);
+  transition: all 0.3s var(--ease-out);
+}
+
+.btn-secondary:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(0, 92, 107, 0.03);
+}
+
+/* Hero Mockup */
+.hero-mockup {
+  position: relative;
+  animation: mockupFloat 1s 0.3s var(--ease-out) both;
+  width: 100%;
+  max-width: 420px;
+}
+
+@keyframes mockupFloat {
+  from { opacity: 0; transform: translateY(30px) rotate(1deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+.mockup-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.04),
+    0 8px 32px rgba(0,0,0,0.06),
+    0 24px 60px rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light), var(--gold));
+}
+
+.mockup-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-subtle);
+}
+
+.mockup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.mockup-line {
+  height: 10px;
+  border-radius: 4px;
+  background: var(--bg-warm);
+}
+
+.mockup-line:nth-child(1) { width: 70%; background: var(--teal); opacity: 0.15; }
+.mockup-line:nth-child(2) { width: 90%; }
+.mockup-line:nth-child(3) { width: 55%; }
+.mockup-line:nth-child(4) { width: 80%; }
+.mockup-line:nth-child(5) { width: 40%; background: var(--gold); opacity: 0.2; }
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+  flex: 1;
+}
+
+.mockup-card {
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  background: var(--bg);
+  min-height: 48px;
+}
+
+/* ── Stats Strip ── */
+.stats-strip {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.stats-strip .container {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--text-dark);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ── Social Proof ── */
+.social-proof {
+  padding: 24px 0;
+  text-align: center;
+  background: var(--bg-warm);
+}
+
+.social-proof p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.social-proof strong {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* ── Section Styling ── */
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 540px;
+  line-height: 1.65;
+}
+
+/* ── Problem Section ── */
+.problem {
+  background: var(--bg-warm);
+  position: relative;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.problem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+.problem-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.problem-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.problem-card p {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── Who This Is For ── */
+.persona {
+  background: var(--bg);
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.persona-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+
+.persona-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+.persona-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.persona-card:nth-child(1)::before { background: var(--teal); }
+.persona-card:nth-child(2)::before { background: var(--gold); }
+.persona-card:nth-child(3)::before { background: var(--blue); }
+
+.persona-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.persona-card:nth-child(1) .persona-icon { background: rgba(0, 92, 107, 0.1); }
+.persona-card:nth-child(2) .persona-icon { background: var(--gold-pale); }
+.persona-card:nth-child(3) .persona-icon { background: rgba(74, 127, 186, 0.1); }
+
+.persona-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.persona-card p {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── Sneak Peek ── */
+.peek {
+  background: var(--bg-warm);
+}
+
+.peek-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.peek-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 22px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+  cursor: default;
+}
+
+.peek-card:hover {
+  transform: translateY(-4px) rotate(-0.3deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.peek-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transition: height 0.3s var(--ease-out);
+}
+
+.peek-card:hover::before {
+  height: 5px;
+}
+
+.peek-card.c-teal::before { background: var(--teal); }
+.peek-card.c-blue::before { background: var(--blue); }
+.peek-card.c-green::before { background: var(--green); }
+.peek-card.c-purple::before { background: var(--purple); }
+.peek-card.c-red::before { background: var(--red); }
+.peek-card.c-amber::before { background: var(--amber); }
+.peek-card.c-mint::before { background: var(--mint); }
+.peek-card.c-sky::before { background: var(--sky); }
+
+.peek-card .card-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.peek-card.c-teal .card-label { color: var(--teal); }
+.peek-card.c-blue .card-label { color: var(--blue); }
+.peek-card.c-green .card-label { color: var(--green); }
+.peek-card.c-purple .card-label { color: var(--purple); }
+.peek-card.c-red .card-label { color: var(--red); }
+.peek-card.c-amber .card-label { color: var(--amber); }
+.peek-card.c-mint .card-label { color: var(--mint); }
+.peek-card.c-sky .card-label { color: var(--sky); }
+
+.peek-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.peek-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Agents Section ── */
+.agents {
+  background: var(--bg-dark);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.agents::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 92, 107, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.agents .section-label {
+  color: var(--gold);
+}
+
+.agents .section-title {
+  color: #fff;
+}
+
+.agents .section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.agent-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.4s var(--ease-out);
+  backdrop-filter: blur(4px);
+}
+
+.agent-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.agent-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: rgba(0, 92, 107, 0.3);
+}
+
+.agent-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.agent-card p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+}
+
+.agent-tier {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(200, 149, 108, 0.15);
+  color: var(--gold-light);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Pricing Section ── */
+.pricing {
+  background: var(--bg);
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 92, 107, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pricing .container {
+  position: relative;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+  transition: all 0.4s var(--ease-out);
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+.price-card.featured {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 1px var(--teal), 0 8px 32px rgba(0, 92, 107, 0.12);
+}
+
+.price-card.featured:hover {
+  box-shadow: 0 0 0 1px var(--teal), 0 20px 48px rgba(0, 92, 107, 0.18);
+}
+
+.price-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--teal);
+  color: #fff;
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.price-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.price-card .price-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.price-card .price {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--text-dark);
+  margin: 20px 0 4px;
+  letter-spacing: -1px;
+}
+
+.price-card .price-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.price-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+.price-features li {
+  font-size: 14px;
+  color: var(--text-body);
+  padding: 9px 0;
+  padding-left: 26px;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.price-features li:last-child {
+  border-bottom: none;
+}
+
+.price-features li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.price-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s var(--ease-out);
+  letter-spacing: 0.2px;
+}
+
+.price-btn.primary {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 92, 107, 0.2);
+}
+
+.price-btn.primary:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 92, 107, 0.25);
+}
+
+.price-btn.outline {
+  background: transparent;
+  color: var(--teal);
+  border: 1.5px solid var(--teal);
+}
+
+.price-btn.outline:hover {
+  background: rgba(0, 92, 107, 0.04);
+}
+
+/* ── About Author ── */
+.about {
+  background: var(--bg-warm);
+}
+
+.about-card {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.about-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-light));
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.about-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-stat {
+  text-align: center;
+}
+
+.about-stat .num {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--teal);
+}
+
+.about-stat .label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Email CTA ── */
+.cta-section {
+  background: var(--teal);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  mix-blend-mode: soft-light;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200, 149, 108, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-section .section-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-section .section-title {
+  color: #fff;
+}
+
+.cta-section .btn-primary {
+  background: #fff;
+  color: var(--teal);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.cta-section .btn-primary:hover {
+  background: var(--cream, #FAF8F3);
+  color: var(--teal);
+}
+
+.cta-section .cta-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.65;
+}
+
+.email-form {
+  display: flex;
+  gap: 10px;
+  max-width: 440px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-form input[type="email"] {
+  flex: 1;
+  min-width: 240px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: all 0.3s var(--ease-out);
+}
+
+.email-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.email-form input[type="email"]:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.email-form button {
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  background: var(--gold);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  letter-spacing: 0.2px;
+}
+
+.email-form button:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(200, 149, 108, 0.3);
+}
+
+.cta-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 14px;
+}
+
+/* ── FAQ ── */
+.faq {
+  background: var(--bg);
+}
+
+.faq-list {
+  max-width: 660px;
+  margin: 48px auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 18px 0;
+}
+
+.faq-item summary {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--text-dark);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.faq-item summary:hover {
+  color: var(--teal);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--gold);
+  font-weight: 300;
+  transition: transform 0.3s var(--ease-out);
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding-top: 12px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-dark);
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding: 44px 0;
+  font-size: 13px;
+}
+
+footer .footer-brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+footer .footer-brand span {
+  color: var(--teal-light);
+}
+
+footer .footer-tagline {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+footer .footer-legal {
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Old Way / New Way ── */
+.transform {
+  background: var(--bg);
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  gap: 0;
+  margin-top: 48px;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.transform-col {
+  padding: 36px 32px;
+  border-radius: 14px;
+}
+
+.transform-col.old {
+  background: var(--bg-warm);
+  border: 1px solid var(--border-card);
+}
+
+.transform-col.new {
+  background: var(--bg-dark);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.transform-col .col-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 5px;
+}
+
+.transform-col.old .col-badge {
+  background: rgba(196, 81, 61, 0.1);
+  color: var(--red);
+}
+
+.transform-col.new .col-badge {
+  background: rgba(0, 169, 157, 0.15);
+  color: var(--teal-light);
+}
+
+.transform-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transform-list li {
+  font-size: 15px;
+  padding: 11px 0;
+  padding-left: 28px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  line-height: 1.55;
+}
+
+.transform-col.new .transform-list li {
+  border-bottom-color: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+}
+
+.transform-list li:last-child {
+  border-bottom: none;
+}
+
+.transform-list li::before {
+  position: absolute;
+  left: 0;
+  font-size: 14px;
+}
+
+.transform-col.old .transform-list li::before {
+  content: '\2717';
+  color: var(--red);
+}
+
+.transform-col.new .transform-list li::before {
+  content: '\2713';
+  color: var(--teal-light);
+}
+
+.transform-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+/* ── Free Toolkit Section ── */
+.toolkit {
+  background: var(--bg-warm);
+  position: relative;
+}
+
+.toolkit-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.toolkit-items {
+  list-style: none;
+  padding: 0;
+}
+
+.toolkit-items li {
+  font-size: 15px;
+  padding: 14px 0;
+  padding-left: 36px;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+.toolkit-items li:last-child {
+  border-bottom: none;
+}
+
+.toolkit-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(0, 92, 107, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolkit-items li::after {
+  content: '\2713';
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.toolkit-items li strong {
+  color: var(--text-dark);
+}
+
+.toolkit-form-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.toolkit-form-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.toolkit-form-card .form-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.toolkit-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolkit-form-card input[type="email"],
+.toolkit-form-card input[type="text"] {
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.toolkit-form-card input[type="email"]:focus,
+.toolkit-form-card input[type="text"]:focus {
+  border-color: var(--teal);
+}
+
+.toolkit-form-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.toolkit-form-card button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: var(--teal);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 2px 8px rgba(0, 92, 107, 0.2);
+}
+
+.toolkit-form-card button:hover {
+  background: var(--teal-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 92, 107, 0.25);
+}
+
+.toolkit-form-card .form-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Inline CTA Banners ── */
+.inline-cta {
+  padding: 40px 0;
+  text-align: center;
+  background: var(--bg);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.inline-cta p {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 26px);
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.inline-cta .btn-primary {
+  display: inline-flex;
+}
+
+/* ── Coming Soon / Waitlist ── */
+.waitlist {
+  background: var(--bg);
+  position: relative;
+}
+
+.waitlist::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 92, 107, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.waitlist .container {
+  position: relative;
+}
+
+.waitlist-card {
+  max-width: 620px;
+  margin: 40px auto 0;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+}
+
+.waitlist-card .tbd-badge {
+  display: inline-block;
+  background: var(--gold-pale);
+  color: var(--gold);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.waitlist-card h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.waitlist-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+.waitlist-card form {
+  display: flex;
+  gap: 10px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.waitlist-card input[type="email"] {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.waitlist-card input[type="email"]:focus {
+  border-color: var(--teal);
+}
+
+.waitlist-card button {
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  background: var(--teal);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  white-space: nowrap;
+}
+
+.waitlist-card button:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 92, 107, 0.25);
+}
+
+.waitlist-perks {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.waitlist-perks .perk {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.waitlist-perks .perk::before {
+  content: '\2713';
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-cta-group { justify-content: center; }
+  .hero-mockup { max-width: 320px; margin: 0 auto; }
+  .peek-grid { grid-template-columns: repeat(2, 1fr); }
+  .agent-grid { grid-template-columns: repeat(2, 1fr); }
+  .persona-grid { grid-template-columns: 1fr; }
+  .toolkit-inner { grid-template-columns: 1fr; }
+  .transform-grid { grid-template-columns: 1fr; }
+  .transform-arrow { transform: rotate(90deg); padding: 8px 0; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 56px 0; }
+  .hero { padding: 48px 0 40px; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .peek-grid { grid-template-columns: 1fr; }
+  .agent-grid { grid-template-columns: 1fr; }
+  .waitlist-card form { flex-direction: column; }
+  .waitlist-perks { flex-direction: column; gap: 12px; align-items: center; }
+  .stats-strip .container { gap: 28px; }
+  .about-stats { flex-direction: column; gap: 16px; }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+/* Accessibility: visually-hidden utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--teal);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* Global focus-visible ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold, #C8956C);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Hero tagline */
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  color: var(--teal);
+  margin: 0 0 18px 0;
+  line-height: 1.3;
+}
+
+/* Form field structure */
+.toolkit-form-card .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+.toolkit-form-card .field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.02em;
+}
+.toolkit-form-card .field .req {
+  color: #B84A2A;
+  margin-left: 2px;
+}
+.toolkit-form-card .err-msg {
+  font-size: 13px;
+  color: #B84A2A;
+  min-height: 16px;
+  font-weight: 500;
+}
+.toolkit-form-card .err-msg:empty {
+  min-height: 0;
+}
+.toolkit-form-card input[aria-invalid="true"] {
+  border-color: #B84A2A;
+}
+.required-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+/* Form perks list */
+.form-perks {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0 0;
+  display: grid;
+  gap: 10px;
+}
+.form-perks li {
+  font-size: 14px;
+  color: var(--text-body);
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.5;
+}
+.form-perks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.85;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'><path d='M3 7.5l2.5 2.5L11 4.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/10px no-repeat;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'><path d='M3 7.5l2.5 2.5L11 4.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/10px no-repeat;
+}
+
+/* Persona grid: add 2-column intermediate breakpoint */
+@media (min-width: 641px) and (max-width: 900px) {
+  .persona-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reduced motion: disable scroll-reveal + transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Navigation -->
+<nav aria-label="Primary">
+  <div class="container">
+    <div class="nav-brand">Customer Success <span>OS</span></div>
+    <a href="#toolkit" class="nav-cta">Get the Free Toolkit</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">For Customer Success Managers</div>
+      <h1>The AI Playbook for Customer Success Managers</h1>
+      <p class="hero-tagline"><em>Automate busywork, not empathy.</em></p>
+      <p class="hero-sub">A field-tested AI playbook for CSMs: 35+ prompts and 6 agent blueprints that cut QBR prep, surface churn risk, and keep your book running while you focus on clients.</p>
+      <div class="hero-cta-group">
+        <a href="#toolkit" class="btn-primary">Get 5 free CSM prompts &rarr;</a>
+        <a href="#peek" class="btn-secondary">See What's Inside</a>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <div class="mockup-wrapper">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+        </div>
+        <div class="mockup-grid">
+          <div class="mockup-card"></div>
+          <div class="mockup-card"></div>
+          <div class="mockup-card"></div>
+          <div class="mockup-card"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip reveal">
+  <div class="container">
+    <div class="stat">
+      <div class="stat-number">35+</div>
+      <div class="stat-label">Ready-to-Use Prompts</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Autonomous Agents</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">8</div>
+      <div class="stat-label">Comprehensive Sections</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">11yr</div>
+      <div class="stat-label">CSM Experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social Proof -->
+<div class="social-proof">
+  <div class="container">
+    <p>Built for <strong>CS professionals</strong> ready to run their book with AI. Free download, no strings attached.</p>
+  </div>
+</div>
+
+<!-- Old Way vs New Way -->
+<section class="transform">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label reveal">The Shift</div>
+      <h2 class="section-title reveal">There's a better way to run your book</h2>
+      <p class="section-subtitle reveal" style="margin: 0 auto;">Most CSMs are stuck in reactive mode. The ones pulling ahead have a system.</p>
+    </div>
+    <div class="transform-grid reveal">
+      <div class="transform-col old">
+        <div class="col-badge">Without a system</div>
+        <ul class="transform-list">
+          <li>3+ hours prepping every QBR from scratch</li>
+          <li>Manually checking accounts for churn signals</li>
+          <li>Scrambling to write escalation briefs under pressure</li>
+          <li>No idea which stakeholders actually have influence</li>
+          <li>Renewal surprises because you lost track of timelines</li>
+          <li>Trying AI with no framework, getting mediocre results</li>
+        </ul>
+      </div>
+      <div class="transform-arrow">&rarr;</div>
+      <div class="transform-col new">
+        <div class="col-badge">With Customer Success OS</div>
+        <ul class="transform-list">
+          <li>Full QBR package generated in minutes with Prep Agent</li>
+          <li>Monday morning health digest flags at-risk accounts</li>
+          <li>Escalation briefs drafted in under 2 hours, every time</li>
+          <li>Every stakeholder mapped with strategy per type</li>
+          <li>18-month renewal touchpoints, automated and tracked</li>
+          <li>35+ tested prompts you can copy-paste and run today</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For -->
+<section class="persona">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label reveal">Who This Is For</div>
+      <h2 class="section-title reveal">Built for CSMs who actually do the work</h2>
+    </div>
+    <div class="persona-grid reveal-stagger">
+      <div class="persona-card">
+        <div class="persona-icon" aria-hidden="true">&#127919;</div>
+        <h3>Solo CSM, High-Touch Accounts</h3>
+        <p>You're running a strategic book of enterprise accounts solo and prep work eats your calendar. The system assumes you have no bench and no time. You need leverage, not more hours.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon" aria-hidden="true">&#128203;</div>
+        <h3>CS Leader Building a Playbook</h3>
+        <p>You need an AI framework your team can actually roll out, with the governance doc, PHI guardrails, and human-in-the-loop rules your CISO will sign off on.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon" aria-hidden="true">&#9889;</div>
+        <h3>CSM New to AI</h3>
+        <p>You've heard AI can help but don't know where to start. No coding, no prompt engineering. If you can paste into a chat window, you can run these today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Free AI Toolkit + Launch Waitlist (merged) -->
+<section class="toolkit" id="toolkit">
+  <div class="container">
+    <div class="section-label reveal">Free Resource + Launch List</div>
+    <h2 class="section-title reveal">The AI Toolkit for CSMs</h2>
+    <p class="section-subtitle reveal">5 production-tested prompts you can use this week. Plus early access and the lowest launch price when the full playbook drops.</p>
+    <div class="toolkit-inner">
+      <div class="reveal">
+        <ul class="toolkit-items">
+          <li><strong>Meeting Prep Brief:</strong> paste your notes on an upcoming client meeting and get a 1-page brief with talking points, risks, and questions to ask</li>
+          <li><strong>QBR Narrative Builder:</strong> turn raw account data into an executive-ready story in minutes</li>
+          <li><strong>Escalation Brief Generator:</strong> draft a crisp escalation summary when the clock is ticking</li>
+          <li><strong>Client Email Polisher:</strong> paste your draft client email and get an executive-ready version that's clear, professional, and action-oriented</li>
+          <li><strong>Weekly Priorities Organizer:</strong> paste your to-do list and account notes to get a prioritized action plan sorted by urgency and client impact</li>
+        </ul>
+        <p style="margin-top: 20px; font-size: 14px; color: var(--text-muted);">These 5 prompts are built from the same methodology behind Customer Success OS. If they save you time this week, imagine what the full system does.</p>
+      </div>
+      <div class="toolkit-form-card reveal">
+        <h3>Get instant access</h3>
+        <p class="form-sub">Free download delivered to your inbox. You'll also be first in line when the full playbook launches, with the lowest launch price. <span class="required-note">* required</span></p>
+        <form id="toolkit-form" novalidate>
+          <div class="field">
+            <label for="toolkit-name">First name <span aria-hidden="true" class="req">*</span></label>
+            <input type="text" id="toolkit-name" name="name" required aria-required="true" aria-describedby="name-err" autocomplete="given-name">
+            <span class="err-msg" id="name-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="toolkit-email">Work email (where we'll send the prompts) <span aria-hidden="true" class="req">*</span></label>
+            <input type="email" id="toolkit-email" name="email" required aria-required="true" aria-describedby="email-err" autocomplete="email">
+            <span class="err-msg" id="email-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="toolkit-company">Company <span aria-hidden="true" class="req">*</span></label>
+            <input type="text" id="toolkit-company" name="company" required aria-required="true" aria-describedby="company-err" autocomplete="organization">
+            <span class="err-msg" id="company-err" role="alert"></span>
+          </div>
+          <button type="submit">Send me the toolkit <span aria-hidden="true">&rarr;</span></button>
+        </form>
+        <p class="form-note">No spam. No sales calls. Just 5 prompts that work.</p>
+        <ul class="form-perks" aria-label="What you get">
+          <li>Early access to the full playbook</li>
+          <li>Lowest launch price, locked in</li>
+          <li>Free AI Toolkit delivered immediately</li>
+        </ul>
+        <div class="form-success" style="display:none;" role="status" aria-live="polite">
+          <p style="color: var(--teal); font-weight: 600; font-size: 18px; margin-bottom: 8px;">You're in!</p>
+          <p style="font-size: 14px; color: var(--text-muted);">Check your inbox for the AI Toolkit. Welcome to Customer Success OS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sneak Peek -->
+<section class="peek" id="peek">
+  <div class="container">
+    <div class="section-label reveal">Sneak Peek</div>
+    <h2 class="section-title reveal">What's inside Customer Success OS</h2>
+    <p class="section-subtitle reveal">8 comprehensive sections covering the full CSM lifecycle, from onboarding to renewal. The free toolkit gives you a taste. The full playbook gives you the system.</p>
+    <div class="peek-grid reveal-stagger">
+      <div class="peek-card c-teal">
+        <div class="card-label">Section 1</div>
+        <h3>Account Intelligence Setup</h3>
+        <p>Load your entire book of business into Claude. Company intel, contract details, internal context.</p>
+      </div>
+      <div class="peek-card c-blue">
+        <div class="card-label">Section 2</div>
+        <h3>Onboarding &amp; Transitions</h3>
+        <p>Sales handoff intake, leadership intro prep, go-live planning, and inheriting live accounts.</p>
+      </div>
+      <div class="peek-card c-green">
+        <div class="card-label">Section 3</div>
+        <h3>Health Scoring</h3>
+        <p>Weekly health checks, at-risk recovery plans, portfolio digests, and expansion signals.</p>
+      </div>
+      <div class="peek-card c-purple">
+        <div class="card-label">Section 4</div>
+        <h3>QBR Mastery</h3>
+        <p>Agenda building to executive narratives to commitment boards. Full QBR lifecycle, AI-powered.</p>
+      </div>
+      <div class="peek-card c-red">
+        <div class="card-label">Section 5</div>
+        <h3>Escalation Management</h3>
+        <p>Escalation briefs in minutes, client comms, internal nudges, and post-resolution recovery.</p>
+      </div>
+      <div class="peek-card c-amber">
+        <div class="card-label">Section 6</div>
+        <h3>Stakeholder Intelligence</h3>
+        <p>Map every stakeholder. Identify blockers. Handle champion departures with a playbook, not panic.</p>
+      </div>
+      <div class="peek-card c-mint">
+        <div class="card-label">Section 7</div>
+        <h3>Renewals &amp; Expansion</h3>
+        <p>Renewal readiness assessments, 18-month touchpoints, and expansion signal scanning.</p>
+      </div>
+      <div class="peek-card c-sky">
+        <div class="card-label">Section 8</div>
+        <h3>Reference &amp; Governance</h3>
+        <p>Complete prompt reference, agent setup checklists, and enterprise-safe AI governance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inline CTA -->
+<div class="inline-cta reveal">
+  <div class="container">
+    <p>Want to try 5 of these prompts right now?</p>
+    <a href="#toolkit" class="btn-primary">Download the Free Toolkit &rarr;</a>
+  </div>
+</div>
+
+<!-- Agents -->
+<section class="agents">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label reveal">Tier 2: Agentic Architect</div>
+      <h2 class="section-title reveal">6 agents that run your CS workflow</h2>
+      <p class="section-subtitle reveal" style="margin: 0 auto;">Autonomous blueprints that handle the heavy lifting while you focus on relationships.</p>
+    </div>
+    <div class="agent-grid reveal-stagger">
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></div>
+        <div>
+          <h3>Onboarding Intelligence</h3>
+          <p>Watches your implementation touchpoints and pings you when a key stakeholder has gone quiet for too long.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 12 8 6 11 18 14 8 16 12 22 12"/></svg></div>
+        <div>
+          <h3>Pulse Agent</h3>
+          <p>Monday morning portfolio health digest. Know which accounts need attention first.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg></div>
+        <div>
+          <h3>Prep Agent</h3>
+          <p>Full QBR package builder. Six output files, automated research, exec-ready narratives.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg></div>
+        <div>
+          <h3>Shield Agent</h3>
+          <p>Catches the ticket you would have missed, before your client calls to ask why nobody's responding.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></div>
+        <div>
+          <h3>Scout Agent</h3>
+          <p>Pre-meeting intelligence briefing. Full situational brief 30 minutes before every call.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><line x1="12" y1="7.5" x2="12" y2="21"/><path d="M5 14c0 4 3 7 7 7s7-3 7-7"/><line x1="5" y1="14" x2="19" y2="14"/></svg></div>
+        <div>
+          <h3>Anchor Agent</h3>
+          <p>Renewal timeline tracker with opt-out deadline alerts. Never surprised by a renewal.</p>
+          <span class="agent-tier">Tier 2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Author -->
+<section class="about">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label reveal">About the Author</div>
+      <h2 class="section-title reveal">Built from real workflows</h2>
+    </div>
+    <div class="about-card reveal">
+      <div class="about-avatar">GH</div>
+      <h3>Greg Humlicek</h3>
+      <p>Customer Success Manager in B2B SaaS, running a strategic book of enterprise accounts. Every prompt here is one I use on a real Monday morning, not theory, not a rebrand of someone else's framework. It's the system I use every day.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="num">11 Years</div>
+          <div class="label">In Customer Success</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">$49M+</div>
+          <div class="label">Managed</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">B2B SaaS</div>
+          <div class="label">Enterprise Accounts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="section-label reveal">Don't Wait</div>
+    <h2 class="section-title reveal">A 5-minute read that could save you 5 hours this week</h2>
+    <p class="cta-desc reveal">Download the free AI Toolkit for CSMs. 5 prompts, ready to use, zero learning curve. If it saves you even one hour of QBR prep, it was worth the 30 seconds to sign up.</p>
+    <div class="reveal">
+      <a href="#toolkit" class="btn-primary">Get 5 free CSM prompts <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <p class="cta-note reveal">Free. No credit card. No sales calls. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label reveal">FAQ</div>
+      <h2 class="section-title reveal">Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Who is this for?</summary>
+        <div class="faq-answer">Customer Success Managers, CS leaders, and anyone managing client relationships in B2B SaaS. Whether you manage 5 accounts or 50, the prompts and frameworks scale to your book of business.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What AI tools do I need?</summary>
+        <div class="faq-answer">A Claude account works: the free tier is fine to try the prompts, and Claude Pro or your company's enterprise license is best for real client data. The playbook is designed to work with Claude Chat, Cowork, and Code. Prompts can be adapted for other AI tools, but they're optimized for Claude.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is this safe for enterprise environments?</summary>
+        <div class="faq-answer">Yes. The playbook has a governance chapter covering PHI exclusion, SOC 2 considerations, BAA requirements, and the human-in-the-loop rules you'll need to clear compliance.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What do I get when I sign up?</summary>
+        <div class="faq-answer">Immediately: the free AI Toolkit with 5 production-tested prompts covering meeting prep, QBR narratives, escalation briefs, email polishing, and weekly prioritization. You'll also be first in line when the full Customer Success OS playbook launches, with the best available price.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm brand new to AI?</summary>
+        <div class="faq-answer">That's exactly who the toolkit is built for. Each prompt includes clear instructions and works with copy-paste. No coding, no setup. If you can type into a chat window, you can use these.</div>
+      </details>
+      <details class="faq-item">
+        <summary>When does the full playbook launch?</summary>
+        <div class="faq-answer">Targeting a 2026 launch under $500 for the full playbook. Waitlist members lock in the lowest launch price. Sign up for the free toolkit to get on the list.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">Customer Success <span>OS</span></div>
+    <p class="footer-tagline">The AI Playbook for Customer Success Managers</p>
+    <p class="footer-legal">
+      &copy; 2026 Greg Humlicek. All rights reserved.<br>
+      Document ID: UA-GH2026-CSM-001 | Case No. 1-15137178811
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll Reveal Script -->
+<script>
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    observer.observe(el);
+  });
+})();
+
+// ── Form Submission to Google Sheets ──
+(function() {
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-zoGhFQcCc0QpT1_P4r7Z8wUNOuk49sm4IpxsAuGc1fwF-_w3P9N6Lgsu_vZBQCYU5w/exec';
+
+  var form = document.getElementById('toolkit-form');
+  if (!form) return;
+
+  function setError(inputId, errId, message) {
+    var input = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (message) {
+      input.setAttribute('aria-invalid', 'true');
+      err.textContent = message;
+    } else {
+      input.removeAttribute('aria-invalid');
+      err.textContent = '';
+    }
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = form.querySelector('[name="name"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var company = form.querySelector('[name="company"]').value.trim();
+
+    var valid = true;
+    if (!name) { setError('toolkit-name', 'name-err', 'Please enter your first name.'); valid = false; }
+    else { setError('toolkit-name', 'name-err', ''); }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('toolkit-email', 'email-err', 'Please enter a valid work email.');
+      valid = false;
+    } else { setError('toolkit-email', 'email-err', ''); }
+    if (!company) { setError('toolkit-company', 'company-err', 'Please enter your company.'); valid = false; }
+    else { setError('toolkit-company', 'company-err', ''); }
+    if (!valid) {
+      form.querySelector('[aria-invalid="true"]').focus();
+      return;
+    }
+
+    var btn = form.querySelector('button[type="submit"]');
+    var originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var data = {
+      name: name,
+      email: email,
+      company: company,
+      source: 'toolkit',
+      timestamp: new Date().toISOString()
+    };
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function() {
+      form.style.display = 'none';
+      var success = form.parentElement.querySelector('.form-success');
+      if (success) success.style.display = 'block';
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert('Something went wrong. Please try again.');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
