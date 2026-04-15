@@ -342,12 +342,12 @@ nav .container {
   background: rgba(0, 92, 107, 0.03);
 }
 
-/* Hero Mockup */
+/* Hero Mockup — Playbook Spread */
 .hero-mockup {
   position: relative;
   animation: mockupFloat 1s 0.3s var(--ease-out) both;
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
 }
 
 @keyframes mockupFloat {
@@ -355,77 +355,213 @@ nav .container {
   to { opacity: 1; transform: translateY(0) rotate(0); }
 }
 
-.mockup-wrapper {
+.mockup-spread {
+  position: relative;
+  padding-right: 28px;
+  padding-bottom: 44px;
+}
+
+.mockup-panel {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 14px;
+  padding: 20px 22px 18px;
   box-shadow:
     0 1px 3px rgba(0,0,0,0.04),
     0 8px 32px rgba(0,0,0,0.06),
     0 24px 60px rgba(0,0,0,0.04);
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  flex-direction: column;
 }
 
-.mockup-wrapper::before {
+.mockup-panel::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--teal), var(--teal-light), var(--gold));
 }
 
-.mockup-header {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 16px;
+.mockup-panel--toc {
+  width: 78%;
+  z-index: 2;
+}
+.mockup-panel--toc::before {
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
 }
 
-.mockup-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border-subtle);
+.mockup-panel--prompt {
+  position: absolute;
+  width: 64%;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 18px 20px 16px;
+  animation: mockupFloat 1s 0.7s var(--ease-out) both;
+}
+.mockup-panel--prompt::before {
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
 }
 
-.mockup-content {
+/* TOC panel */
+.toc-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.toc-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1;
+  gap: 5px;
 }
 
-.mockup-line {
-  height: 10px;
+.toc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+.toc-row > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   border-radius: 4px;
   background: var(--bg-warm);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
-.mockup-line:nth-child(1) { width: 70%; background: var(--teal); opacity: 0.15; }
-.mockup-line:nth-child(2) { width: 90%; }
-.mockup-line:nth-child(3) { width: 55%; }
-.mockup-line:nth-child(4) { width: 80%; }
-.mockup-line:nth-child(5) { width: 40%; background: var(--gold); opacity: 0.2; }
+.toc-row--active {
+  color: var(--teal);
+  font-weight: 600;
+}
+.toc-row--active > span {
+  background: var(--teal);
+  color: #fff;
+}
+.toc-row--active::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-left: auto;
+}
 
-.mockup-grid {
+.toc-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 10px 0 8px;
+}
+
+.toc-footer-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.toc-agents {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 12px;
-  flex: 1;
+  gap: 3px 10px;
 }
 
-.mockup-card {
-  border-radius: 8px;
-  border: 1px solid var(--border-card);
-  background: var(--bg);
-  min-height: 48px;
+.agent-pill {
+  font-size: 10px;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agent-pill::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Prompt panel */
+.prompt-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+
+.tool-badge {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.prompt-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.prompt-body {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+  font-style: italic;
+}
+
+.prompt-caption {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.prompt-caption-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 3px;
 }
 
 /* ── Stats Strip ── */
@@ -1650,7 +1786,9 @@ footer .footer-legal {
   }
   .hero-sub { margin-left: auto; margin-right: auto; }
   .hero-cta-group { justify-content: center; }
-  .hero-mockup { max-width: 320px; margin: 0 auto; }
+  .hero-mockup { max-width: 400px; margin: 0 auto; }
+  .mockup-panel--toc { width: 80%; }
+  .mockup-panel--prompt { width: 62%; }
   .peek-grid { grid-template-columns: repeat(2, 1fr); }
   .agent-grid { grid-template-columns: repeat(2, 1fr); }
   .persona-grid { grid-template-columns: 1fr; }
@@ -1662,6 +1800,10 @@ footer .footer-legal {
 @media (max-width: 640px) {
   section { padding: 56px 0; }
   .hero { padding: 48px 0 40px; }
+  .hero-mockup { max-width: 320px; }
+  .mockup-spread { padding-right: 0; padding-bottom: 0; }
+  .mockup-panel--toc { width: 100%; }
+  .mockup-panel--prompt { display: none; }
   .problem-grid { grid-template-columns: 1fr; }
   .peek-grid { grid-template-columns: 1fr; }
   .agent-grid { grid-template-columns: 1fr; }
@@ -1848,24 +1990,41 @@ select:focus-visible,
       </div>
     </div>
     <div class="hero-mockup">
-      <div class="mockup-wrapper">
-        <div class="mockup-header">
-          <div class="mockup-dot"></div>
-          <div class="mockup-dot"></div>
-          <div class="mockup-dot"></div>
+      <div class="mockup-spread">
+        <div class="mockup-panel mockup-panel--toc">
+          <div class="toc-eyebrow">CSM OS</div>
+          <div class="toc-title">Table of Contents</div>
+          <ol class="toc-list">
+            <li class="toc-row"><span>1</span> Foundations &amp; Setup</li>
+            <li class="toc-row"><span>2</span> Onboarding &amp; Handoff</li>
+            <li class="toc-row"><span>3</span> Account Health</li>
+            <li class="toc-row toc-row--active"><span>4</span> QBR Excellence</li>
+            <li class="toc-row"><span>5</span> Escalation Playbook</li>
+            <li class="toc-row"><span>6</span> Stakeholder Mapping</li>
+            <li class="toc-row"><span>7</span> Renewal &amp; Expansion</li>
+            <li class="toc-row"><span>8</span> Agent Quick Reference</li>
+            <li class="toc-row"><span>9</span> Governance &amp; Safety</li>
+          </ol>
+          <div class="toc-divider"></div>
+          <div class="toc-footer-label">6 Agents &middot; 35+ Prompts</div>
+          <div class="toc-agents">
+            <span class="agent-pill">Onboarding</span>
+            <span class="agent-pill">Pulse</span>
+            <span class="agent-pill">Prep</span>
+            <span class="agent-pill">Shield</span>
+            <span class="agent-pill">Scout</span>
+            <span class="agent-pill">Anchor</span>
+          </div>
         </div>
-        <div class="mockup-content">
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-        </div>
-        <div class="mockup-grid">
-          <div class="mockup-card"></div>
-          <div class="mockup-card"></div>
-          <div class="mockup-card"></div>
-          <div class="mockup-card"></div>
+        <div class="mockup-panel mockup-panel--prompt" aria-hidden="true">
+          <div class="prompt-eyebrow">Prompt 4.1</div>
+          <span class="tool-badge">Chat</span>
+          <div class="prompt-title">Collaborative Agenda Building</div>
+          <p class="prompt-body">&ldquo;You are helping a CSM build a QBR agenda 30 days out, <em>with</em> the client, not for them. Upload: [prior QBR deck, commitment board&hellip;]&rdquo;</p>
+          <div class="prompt-caption">
+            <span class="prompt-caption-label">&rarr; What this does</span>
+            Generates a draft agenda the CSM builds with the client, not at them.
+          </div>
         </div>
       </div>
     </div>
