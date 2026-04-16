@@ -1155,17 +1155,15 @@ nav .container {
 }
 
 .about-avatar {
-  width: 64px;
-  height: 64px;
+  display: block;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--teal), var(--teal-light));
+  object-fit: cover;
   margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 24px;
+  background: var(--bg-warm);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .about-card h3 {
@@ -1988,58 +1986,6 @@ select:focus-visible,
   }
 }
 
-/* ── About the Author ── */
-.about-author {
-  padding: 72px 0 96px;
-  background: var(--bg);
-  border-top: 1px solid var(--border-subtle);
-}
-.about-author .author-card {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  text-align: left;
-}
-.about-author .author-photo {
-  flex: 0 0 auto;
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: var(--bg-warm);
-  border: 1px solid var(--border-card);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.about-author .author-text .section-label {
-  margin-bottom: 12px;
-}
-.about-author .author-text h2 {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--text-dark);
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-.about-author .author-text p {
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--text-body);
-}
-@media (max-width: 640px) {
-  .about-author .author-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  .about-author .author-photo {
-    width: 112px;
-    height: 112px;
-  }
-}
-
 /* Reduced motion: disable scroll-reveal + transitions */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2397,7 +2343,7 @@ select:focus-visible,
       <h2 class="section-title reveal">Built from real workflows</h2>
     </div>
     <div class="about-card reveal">
-      <div class="about-avatar">GH</div>
+      <img src="assets/headshot.jpg" alt="Greg Humlicek, author of Customer Success OS" class="about-avatar" width="112" height="112" loading="lazy">
       <h3>Greg Humlicek</h3>
       <p>Customer Success Manager in B2B SaaS, running a strategic book of enterprise accounts. Every prompt here is one I use on a real Monday morning, not theory, not a rebrand of someone else's framework. It's the system I use every day.</p>
       <div class="about-stats">
@@ -2406,7 +2352,7 @@ select:focus-visible,
           <div class="label">In Customer Success</div>
         </div>
         <div class="about-stat">
-          <div class="num">$49M+</div>
+          <div class="num">$69M+</div>
           <div class="label">Managed</div>
         </div>
         <div class="about-stat">
@@ -2467,20 +2413,6 @@ select:focus-visible,
         <summary>When does the full playbook launch?</summary>
         <div class="faq-answer">Targeting a 2026 launch under $500 for the full playbook. Waitlist members lock in the lowest launch price. Sign up for the free toolkit to get on the list.</div>
       </details>
-    </div>
-  </div>
-</section>
-
-<!-- About the Author -->
-<section class="about-author">
-  <div class="container">
-    <div class="author-card reveal">
-      <img src="assets/headshot.jpg" alt="Greg Humlicek, author of Customer Success OS" class="author-photo" width="128" height="128" loading="lazy">
-      <div class="author-text">
-        <div class="section-label">About the author</div>
-        <h2>Greg Humlicek</h2>
-        <p>11 years in Customer Success. Currently running a $69M book of business across multiple enterprise B2B SaaS accounts. Customer Success OS is the system Greg actually uses to run his week: the prompts, agent blueprints, and governance guardrails in the playbook come from his day job, not a spreadsheet of ideas.</p>
-      </div>
     </div>
   </div>
 </section>
