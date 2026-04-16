@@ -41,14 +41,15 @@
       "name": "Greg Humlicek",
       "jobTitle": "Customer Success Manager",
       "url": "https://customersuccessos.com/",
-      "description": "Customer Success Manager in B2B SaaS with 11 years of experience managing enterprise accounts."
+      "description": "Customer Success Manager with 11 years of experience running a $69M book of business across multiple enterprise B2B SaaS accounts."
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {"@type": "Question", "name": "Who is this for?", "acceptedAnswer": {"@type": "Answer", "text": "Customer Success Managers, CS leaders, and anyone managing client relationships in B2B SaaS. Whether you manage 5 accounts or 50, the prompts and frameworks scale to your book of business."}},
         {"@type": "Question", "name": "What AI tools do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Claude account works (free tier to try them; Claude Pro or your company's enterprise license is best for real client data). The playbook is designed to work with Claude Chat, Cowork, and Code."}},
-        {"@type": "Question", "name": "Is this safe for enterprise environments?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The playbook has a governance chapter covering PHI exclusion, SOC 2 considerations, BAA requirements, and the human-in-the-loop rules you'll need to clear compliance."}},
+        {"@type": "Question", "name": "Is my data safe? What about PHI and compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and the playbook treats this as a first-class concern. There's a full governance chapter covering what you should and shouldn't upload under an enterprise AI license, a hard rule against putting PHI into any prompt, SOC 2 and BAA posture for AI vendors, a shadow-AI section on why personal consumer AI accounts are a compliance risk, and a human-in-the-loop requirement on every agent output. If your CISO or compliance team needs to sign off, you can hand them the chapter."}},
+        {"@type": "Question", "name": "Does this work outside healthcare?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The playbook is written for any B2B SaaS CSM. Some governance examples reference healthcare because that's the most regulated end of the spectrum, so if your industry has lighter compliance requirements you just skip the PHI-specific sections. The agent blueprints, QBR system, stakeholder mapping, escalation playbook, and renewal frameworks are vendor and industry neutral."}},
         {"@type": "Question", "name": "What do I get when I sign up?", "acceptedAnswer": {"@type": "Answer", "text": "Immediately: the free AI Toolkit with 5 production-tested prompts covering meeting prep, QBR narratives, escalation briefs, email polishing, and weekly prioritization. You will also be first in line when the full Customer Success OS playbook launches, with the best available price."}},
         {"@type": "Question", "name": "What if I'm brand new to AI?", "acceptedAnswer": {"@type": "Answer", "text": "That is exactly who the toolkit is built for. No coding, no prompt engineering. If you can paste into a chat window, you can run these today."}},
         {"@type": "Question", "name": "When does the full playbook launch?", "acceptedAnswer": {"@type": "Answer", "text": "Targeting a 2026 launch under $500 for the full playbook. Waitlist members lock in the lowest price. Sign up for the free toolkit to get on the list."}}
@@ -1987,6 +1988,58 @@ select:focus-visible,
   }
 }
 
+/* ── About the Author ── */
+.about-author {
+  padding: 72px 0 96px;
+  background: var(--bg);
+  border-top: 1px solid var(--border-subtle);
+}
+.about-author .author-card {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  text-align: left;
+}
+.about-author .author-photo {
+  flex: 0 0 auto;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-warm);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.about-author .author-text .section-label {
+  margin-bottom: 12px;
+}
+.about-author .author-text h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+.about-author .author-text p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+@media (max-width: 640px) {
+  .about-author .author-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .about-author .author-photo {
+    width: 112px;
+    height: 112px;
+  }
+}
+
 /* Reduced motion: disable scroll-reveal + transitions */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2182,7 +2235,7 @@ select:focus-visible,
       </div>
       <div class="toolkit-form-card reveal">
         <h3>Get instant access</h3>
-        <p class="form-sub">Free download delivered to your inbox. You'll also be first in line when the full playbook launches, with the lowest launch price. <span class="required-note">* required</span></p>
+        <p class="form-sub">Free download delivered to your inbox. The first 100 subscribers lock in founding-member pricing when the full playbook launches. <span class="required-note">* required</span></p>
         <form id="toolkit-form" novalidate>
           <div class="field">
             <label for="toolkit-name">First name <span aria-hidden="true" class="req">*</span></label>
@@ -2204,7 +2257,7 @@ select:focus-visible,
         <p class="form-note">No spam. No sales calls. Just 5 prompts that work.</p>
         <ul class="form-perks" aria-label="What you get">
           <li>Early access to the full playbook</li>
-          <li>Lowest launch price, locked in</li>
+          <li>Founding-member pricing (first 100 only)</li>
           <li>Free AI Toolkit delivered immediately</li>
         </ul>
         <div class="form-success" style="display:none;" role="status" aria-live="polite">
@@ -2395,8 +2448,12 @@ select:focus-visible,
         <div class="faq-answer">A Claude account works: the free tier is fine to try the prompts, and Claude Pro or your company's enterprise license is best for real client data. The playbook is designed to work with Claude Chat, Cowork, and Code. Prompts can be adapted for other AI tools, but they're optimized for Claude.</div>
       </details>
       <details class="faq-item">
-        <summary>Is this safe for enterprise environments?</summary>
-        <div class="faq-answer">Yes. The playbook has a governance chapter covering PHI exclusion, SOC 2 considerations, BAA requirements, and the human-in-the-loop rules you'll need to clear compliance.</div>
+        <summary>Is my data safe? What about PHI and compliance?</summary>
+        <div class="faq-answer">Yes, and the playbook treats this as a first-class concern. There's a full governance chapter covering what you should and shouldn't upload under an enterprise AI license, a hard rule against putting PHI into any prompt, SOC 2 and BAA posture for AI vendors, a shadow-AI section on why personal consumer AI accounts are a compliance risk, and a human-in-the-loop requirement on every agent output. If your CISO or compliance team needs to sign off, you can hand them the chapter.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Does this work outside healthcare?</summary>
+        <div class="faq-answer">Yes. The playbook is written for any B2B SaaS CSM. Some governance examples reference healthcare because that's the most regulated end of the spectrum, so if your industry has lighter compliance requirements you just skip the PHI-specific sections. The agent blueprints, QBR system, stakeholder mapping, escalation playbook, and renewal frameworks are vendor and industry neutral.</div>
       </details>
       <details class="faq-item">
         <summary>What do I get when I sign up?</summary>
@@ -2410,6 +2467,20 @@ select:focus-visible,
         <summary>When does the full playbook launch?</summary>
         <div class="faq-answer">Targeting a 2026 launch under $500 for the full playbook. Waitlist members lock in the lowest launch price. Sign up for the free toolkit to get on the list.</div>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- About the Author -->
+<section class="about-author">
+  <div class="container">
+    <div class="author-card reveal">
+      <img src="assets/headshot.jpg" alt="Greg Humlicek, author of Customer Success OS" class="author-photo" width="128" height="128" loading="lazy">
+      <div class="author-text">
+        <div class="section-label">About the author</div>
+        <h2>Greg Humlicek</h2>
+        <p>11 years in Customer Success. Currently running a $69M book of business across multiple enterprise B2B SaaS accounts. Customer Success OS is the system Greg actually uses to run his week: the prompts, agent blueprints, and governance guardrails in the playbook come from his day job, not a spreadsheet of ideas.</p>
+      </div>
     </div>
   </div>
 </section>
