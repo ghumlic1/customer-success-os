@@ -2180,7 +2180,37 @@ select:focus-visible,
         <p style="margin-top: 20px; font-size: 14px; color: var(--text-muted);">These 5 prompts are built from the same methodology behind Customer Success OS. If they save you time this week, imagine what the full system does.</p>
       </div>
       <div class="toolkit-form-card reveal">
-        <script async data-uid="7753ab03b8" src="https://customer-success-os.kit.com/7753ab03b8/index.js"></script>
+        <h3>Get the Free AI Toolkit</h3>
+        <p class="form-sub">5 production-tested prompts, ready to use in Claude today. No fluff, no filler.</p>
+        <form id="toolkit-form" novalidate>
+          <p class="required-note"><span style="color:#B84A2A" aria-hidden="true">*</span> Required</p>
+          <div class="field">
+            <label for="toolkit-name">First name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="toolkit-name" name="name" placeholder="First name" autocomplete="given-name" required>
+            <span class="err-msg" id="name-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="toolkit-email">Work email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="toolkit-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            <span class="err-msg" id="email-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="toolkit-company">Company <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="toolkit-company" name="company" placeholder="Company name" autocomplete="organization" required>
+            <span class="err-msg" id="company-err" role="alert"></span>
+          </div>
+          <button type="submit">Send Me the Free Toolkit &rarr;</button>
+          <p class="form-note">No spam. Unsubscribe any time.</p>
+        </form>
+        <div class="form-success" style="display:none; text-align:center; padding: 24px 0 8px;">
+          <p style="font-size: 22px; font-weight: 700; color: var(--teal); margin-bottom: 10px;">You're in.</p>
+          <p style="font-size: 15px; color: var(--text-body); line-height: 1.6;">Check your inbox -- the free AI toolkit is on its way. You'll also be first in line when the full playbook drops.</p>
+        </div>
+        <ul class="form-perks">
+          <li>5 prompts you can run in Claude today</li>
+          <li>Founding member pricing when the playbook launches</li>
+          <li>No spam, ever</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -2418,9 +2448,10 @@ select:focus-visible,
   });
 })();
 
-// ── Form Submission to Google Sheets ──
+// ── Form Submission ──
 (function() {
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-zoGhFQcCc0QpT1_P4r7Z8wUNOuk49sm4IpxsAuGc1fwF-_w3P9N6Lgsu_vZBQCYU5w/exec';
+  var KIT_URL = 'https://app.convertkit.com/forms/7753ab03b8/subscriptions';
+  var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz-zoGhFQcCc0QpT1_P4r7Z8wUNOuk49sm4IpxsAuGc1fwF-_w3P9N6Lgsu_vZBQCYU5w/exec';
 
   var form = document.getElementById('toolkit-form');
   if (!form) return;
@@ -2448,7 +2479,7 @@ select:focus-visible,
     if (!name) { setError('toolkit-name', 'name-err', 'Please enter your first name.'); valid = false; }
     else { setError('toolkit-name', 'name-err', ''); }
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('toolkit-email', 'email-err', 'Please enter a valid work email.');
+      setError('toolkit-email', 'email-err', 'Please enter a valid email.');
       valid = false;
     } else { setError('toolkit-email', 'email-err', ''); }
     if (!company) { setError('toolkit-company', 'company-err', 'Please enter your company.'); valid = false; }
@@ -2459,34 +2490,36 @@ select:focus-visible,
     }
 
     var btn = form.querySelector('button[type="submit"]');
-    var originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    var data = {
-      name: name,
-      email: email,
-      company: company,
-      source: 'toolkit',
-      timestamp: new Date().toISOString()
-    };
+    // Primary: Kit subscriber API
+    var kitParams = new URLSearchParams();
+    kitParams.append('email_address', email);
+    kitParams.append('first_name', name);
+    kitParams.append('fields[company]', company);
 
-    fetch(SCRIPT_URL, {
+    fetch(KIT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: kitParams.toString()
+    }).catch(function() {});
+
+    // Backup: Google Sheets
+    fetch(SHEETS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .then(function() {
+      body: JSON.stringify({ name: name, email: email, company: company, source: 'toolkit', timestamp: new Date().toISOString() })
+    }).catch(function() {});
+
+    // Both are fire-and-forget (no-cors); show success after brief delay
+    setTimeout(function() {
       form.style.display = 'none';
       var success = form.parentElement.querySelector('.form-success');
       if (success) success.style.display = 'block';
-    })
-    .catch(function() {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      alert('Something went wrong. Please try again.');
-    });
+    }, 800);
   });
 })();
 </script>
