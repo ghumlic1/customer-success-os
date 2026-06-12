@@ -2174,8 +2174,21 @@ summary:focus-visible, [tabindex]:focus-visible {
       })
       .then(function(response) {
         if (!response.ok) throw new Error('HTTP ' + response.status);
-        form.style.display = 'none';
-        success.style.display = 'block';
+        return response.json();
+      })
+      .then(function(data) {
+        if (data && data.status === 'success') {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else if (data && data.status === 'quarantined' && data.url) {
+          // Kit's bot guard returns 200 + a verification URL instead of
+          // creating the subscriber. The visitor must complete that check,
+          // so send them there; Kit finishes the signup on its side.
+          btn.textContent = 'One quick check...';
+          window.location.href = data.url;
+        } else {
+          throw new Error('Unexpected Kit response');
+        }
       })
       .catch(function() {
         btn.disabled = false;
