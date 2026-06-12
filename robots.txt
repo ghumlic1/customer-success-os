@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /CSM_OS_AI_Toolkit.pdf
+
+Sitemap: https://customersuccessos.com/sitemap.xml
